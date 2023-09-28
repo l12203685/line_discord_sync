@@ -1,0 +1,7 @@
+Flask==2.2.2
+line-bot-sdk
+flask
+gunicorn
+"discord.py"
+requests
+lotify

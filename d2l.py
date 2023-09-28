@@ -1,10 +1,8 @@
 import discord
 from discord.ext import commands
-
 from lotify.client import Client
 
-import os
-import json
+import os, json
 
 bot = commands.Bot(command_prefix='>')
 discordbot_token = os.environ['DISCORDBOT_TOKEN']
@@ -13,7 +11,6 @@ discord_webhook_id = int(os.environ['DISCORD_WEBHOOK'].split('/')[-2])
 message_channel_id = os.environ.get('MESSAGE_CHANNEL_ID', None)
 lotify = Client()
 
-
 @bot.command()
 async def ping(ctx):
     lotify.send_message(
@@ -21,7 +18,6 @@ async def ping(ctx):
         message='pong'
     )
     await ctx.send('pong')
-
 
 @bot.listen()
 async def on_message(message):
@@ -34,5 +30,22 @@ async def on_message(message):
         message=lotify_message
     )
 
-
 bot.run(discordbot_token)
+
+# [[source]]
+# url = "https://pypi.python.org/simple"
+# verify_ssl = true
+# name = "pypi"
+
+# [packages]
+# line-bot-sdk = "*"
+# flask = "*"
+# gunicorn = "*"
+# "discord.py" = "*"
+# requests = "*"
+# lotify = "*"
+
+# [dev-packages]
+
+# [requires]
+# python_version = "3.8"
