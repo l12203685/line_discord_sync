@@ -1,18 +1,18 @@
 {
     "builds": [
       {
-        "src": "/l2d.py",
+        "src": "api/l2d.py",
         "use": "@vercel/python"
       },
       {
-        "src": "/d2l.py",
+        "src": "api/d2l.py",
         "use": "@vercel/python"
       }
     ],
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "api/index.py"
+        "dest": "api/l2d.py"
       }
     ]
   }
